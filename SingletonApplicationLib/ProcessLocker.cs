@@ -42,7 +42,7 @@ namespace SingletonApplicationLib
             _uniqueInstanceMutex?.Dispose();
         }
         /// <summary>
-        /// reset the application to check to the current running one
+        /// reset the class instance to check to the current running process(the current application)
         /// </summary>
         public void SetToSelf()
         {
