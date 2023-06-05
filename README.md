@@ -1,6 +1,6 @@
 # Single Application Locker
 
-This library provides a C# class `SingleApplicationLocker` that checks if another instance of the same application is running or not.
+This library provides a C# class `SingleApplicationLocker` that checks if another instance of the same process, such as the current running application, is running or not.
 The class implements `IDisposable` and the `ISingleApplicationLocker` interface.
 
 ## Features
