@@ -10,7 +10,7 @@ namespace SingletonApplicationLib
         /// <summary>
         /// The Mutex which checks whether the current application is the first instance or not
         /// </summary>
-        private Mutex _uniqueInstanceMutex;
+        protected Mutex _uniqueInstanceMutex;
         
         /// <summary>
         /// The currently checked application name
@@ -19,14 +19,7 @@ namespace SingletonApplicationLib
 
         public SingleApplicationLocker(string applicationToLock = "")
         {
-            if (string.IsNullOrWhiteSpace(applicationToLock))
-            {
-                SetToSelf();
-            }
-            else 
-            {
                 CheckedApplicationName = applicationToLock;
-            }
         }
 
         /// <summary>
@@ -35,6 +28,10 @@ namespace SingletonApplicationLib
         /// <returns>True if the program is the first instance, false if it isn't</returns>
         public bool IsFirstInstance()
         {
+            if (string.IsNullOrWhiteSpace(CheckedApplicationName))
+            {
+                SetToSelf();
+            }
             _uniqueInstanceMutex = new Mutex(true, CheckedApplicationName, out bool isFirstInstance);
             return isFirstInstance;
         }
