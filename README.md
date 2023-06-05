@@ -21,13 +21,13 @@ ProcessLocker locker = new ProcessLocker();
 
 if (locker.IsFirstInstance())
 {
-   //only one instance of locker.CheckedApplicationName is running
+   //only one instance of locker.CheckedProcessName is running
 }
 else
 {
-   //there's another instance running of the same app running
+   //there's another instance running of the same process running
 }
 
-//make sure to release and dispose the mutex when the mutex shouldn't run
+//make sure to release and dispose the mutex when the mutex shouldn't hold ownership of the process
 locker.Dispose();
  ```
