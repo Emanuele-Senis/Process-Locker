@@ -27,6 +27,7 @@ else
 {
   //there's another instance running of the same app running
 }
+
 //make sure to release and dispose the mutex when the mutex shouldn't run
 locker.Dispose();
  ```
