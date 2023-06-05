@@ -4,9 +4,9 @@ using System.Text;
 
 namespace SingletonApplicationLib
 {
-    public interface ISingleApplicationLocker
+    public interface IProcessLocker
     {
-        string CheckedApplicationName { get; set; }
+        string CheckedProcessName { get; set; }
         bool IsFirstInstance();
         void SetToSelf();
     }

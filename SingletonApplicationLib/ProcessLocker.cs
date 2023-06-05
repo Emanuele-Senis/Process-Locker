@@ -5,34 +5,34 @@ using System.Threading;
 namespace SingletonApplicationLib
 {
 
-    public class SingleApplicationLocker : ISingleApplicationLocker, IDisposable
+    public class ProcessLocker : IProcessLocker, IDisposable
     {
         /// <summary>
-        /// The Mutex which checks whether the current application is the first instance or not
+        /// The Mutex which checks whether the currently checked process is the first instance or not
         /// </summary>
         protected Mutex _uniqueInstanceMutex;
         
         /// <summary>
-        /// The currently checked application name
+        /// The currently checked process name
         /// </summary>
-        public string CheckedApplicationName { get; set; }
+        public string CheckedProcessName { get; set; }
 
-        public SingleApplicationLocker(string applicationToLock = "")
+        public ProcessLocker(string applicationToLock = "")
         {
-                CheckedApplicationName = applicationToLock;
+                CheckedProcessName = applicationToLock;
         }
 
         /// <summary>
-        /// Checks if the program running is the first that started or not
+        /// Checks if the program process is the first that started or not
         /// </summary>
-        /// <returns>True if the program is the first instance, false if it isn't</returns>
+        /// <returns>True if the process is the first instance, false if it isn't</returns>
         public bool IsFirstInstance()
         {
-            if (string.IsNullOrWhiteSpace(CheckedApplicationName))
+            if (string.IsNullOrWhiteSpace(CheckedProcessName))
             {
                 SetToSelf();
             }
-            _uniqueInstanceMutex = new Mutex(true, CheckedApplicationName, out bool isFirstInstance);
+            _uniqueInstanceMutex = new Mutex(true, CheckedProcessName, out bool isFirstInstance);
             return isFirstInstance;
         }
 
@@ -47,9 +47,9 @@ namespace SingletonApplicationLib
         public void SetToSelf()
         {
             Process currentProcess = Process.GetCurrentProcess();
-            CheckedApplicationName = currentProcess.ProcessName;
+            CheckedProcessName = currentProcess.ProcessName;
         }
-        ~SingleApplicationLocker()
+        ~ProcessLocker()
         {
             Dispose();
         }
