@@ -1,4 +1,4 @@
-﻿using SingletonApplicationLib;
+﻿using EmanueleAlessandroSenis_ProcessManagement;
 
 ProcessLocker locker = new ProcessLocker();
 

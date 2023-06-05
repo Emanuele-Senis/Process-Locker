@@ -1,5 +1,4 @@
-﻿
-namespace SingletonApplicationLib
+﻿namespace EmanueleAlessandroSenis_ProcessManagement
 {
     public interface IProcessLocker
     {

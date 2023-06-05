@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Threading;
 
-namespace SingletonApplicationLib
+namespace EmanueleAlessandroSenis_ProcessManagement
 {
 
     public class ProcessLocker : IProcessLocker, IDisposable
@@ -42,7 +42,7 @@ namespace SingletonApplicationLib
             _uniqueInstanceMutex?.Dispose();
         }
         /// <summary>
-        /// reset the class instance to check to the current running process(the current application)
+        /// Reset the class instance to check to the current running process(the current application)
         /// </summary>
         public void SetToSelf()
         {
