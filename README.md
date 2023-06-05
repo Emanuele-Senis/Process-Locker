@@ -9,7 +9,7 @@ The class implements `IDisposable` and the `ISingleApplicationLocker` interface.
 - Automatically detect the current application name if the process is not specified 
 - Implements IDisposable to properly release and dispose the Mutex
 
-###Include the namespace
+### Include the namespace
 ```csharp
 using SingletonApplicationLib;
 ```
