@@ -17,7 +17,7 @@ using SingletonApplicationLib;
 ## Usage
 
  ```csharp
-SingleApplicationLocker locker = new SingleApplicationLocker();
+ProcessLocker locker = new ProcessLocker();
 
 if (locker.IsFirstInstance())
 {
