@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>EmanueleAlessandroSenis_ProcessManagement</RootNamespace>
+    <AssemblyName>EmanueleAlessandroSenis_ProcessManagement</AssemblyName>
   </PropertyGroup>
 
 </Project>
