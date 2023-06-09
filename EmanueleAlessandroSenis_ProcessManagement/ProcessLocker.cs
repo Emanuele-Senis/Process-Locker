@@ -4,7 +4,9 @@ using System.Threading;
 
 namespace EmanueleAlessandroSenis_ProcessManagement
 {
-
+    /// <summary>
+    /// Used for checking if the checked process is the first instanced
+    /// </summary>
     public class ProcessLocker : IProcessLocker, IDisposable
     {
         /// <summary>
@@ -17,9 +19,9 @@ namespace EmanueleAlessandroSenis_ProcessManagement
         /// </summary>
         public string CheckedProcessName { get; set; }
 
-        public ProcessLocker(string applicationToLock = "")
+        public ProcessLocker(string processToLock = "")
         {
-                CheckedProcessName = applicationToLock;
+                CheckedProcessName = processToLock;
         }
 
         /// <summary>
@@ -36,6 +38,9 @@ namespace EmanueleAlessandroSenis_ProcessManagement
             return isFirstInstance;
         }
 
+        /// <summary>
+        /// Release Unmanaged Locker resources.
+        /// </summary>
         public void Dispose()
         {
             _uniqueInstanceMutex?.ReleaseMutex();
