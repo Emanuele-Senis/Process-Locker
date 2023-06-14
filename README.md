@@ -8,6 +8,7 @@ The class implements `IDisposable` and the `ISingleApplicationLocker` interface.
 - Check if another instance of CheckedApplicationName is running
 - Automatically detect the current application name if the process is not specified 
 - Implements IDisposable to properly release and dispose the Mutex
+- Implements custom interface IProcessLocker
 
 ### Include the namespace
 ```csharp
