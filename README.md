@@ -14,7 +14,7 @@ The class implements `IDisposable` and the `ISingleApplicationLocker` interface.
 using EmanueleAlessandroSenis_ProcessManagement;
 ```
 
-## Usage
+## Example
 
  ```csharp
 ProcessLocker locker = new ProcessLocker();
