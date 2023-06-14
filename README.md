@@ -5,7 +5,7 @@ The class implements `IDisposable` and the provided interface `IProcessLocker`.
 
 ## Features
 
-- Check if another instance of CheckedApplicationName is running
+- Check if another instance of CheckedProcessName is running
 - Automatically detect the current application name if the process is not specified 
 - Implements IDisposable to properly release and dispose the Mutex
 - Implements custom interface IProcessLocker for code reusability and decoupling purposes
