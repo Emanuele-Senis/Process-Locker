@@ -1,7 +1,7 @@
 # Process Locker
 
 This library provides a C# class `ProcessLocker` that checks if another instance of the same process, such as the current running application, is running or not.
-The class implements `IDisposable` and the `IProcessLocker` interface.
+The class implements `IDisposable` and the provided interface `IProcessLocker`.
 
 ## Features
 
