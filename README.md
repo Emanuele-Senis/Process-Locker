@@ -11,7 +11,7 @@ The class implements `IDisposable` and the `ISingleApplicationLocker` interface.
 
 ### Include the namespace
 ```csharp
-using SingletonApplicationLib;
+using EmanueleAlessandroSenis_ProcessManagement;
 ```
 
 ## Usage
