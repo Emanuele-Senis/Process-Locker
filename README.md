@@ -1,14 +1,14 @@
 # Process Locker
 
-This library provides a C# class `SingleApplicationLocker` that checks if another instance of the same process, such as the current running application, is running or not.
-The class implements `IDisposable` and the `ISingleApplicationLocker` interface.
+This library provides a C# class `ProcessLocker` that checks if another instance of the same process, such as the current running application, is running or not.
+The class implements `IDisposable` and the `IProcessLocker` interface.
 
 ## Features
 
 - Check if another instance of CheckedApplicationName is running
 - Automatically detect the current application name if the process is not specified 
 - Implements IDisposable to properly release and dispose the Mutex
-- Implements custom interface IProcessLocker
+- Implements custom interface IProcessLocker for code reusability and decoupling purposes
 
 ### Include the namespace
 ```csharp
